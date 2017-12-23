@@ -468,6 +468,9 @@ namespace WindowsFormsApp1
                 textBox_Cil.Text = "List";
                 textBox_Cil.ReadOnly = true;
                 button_prehod.Enabled = false;
+                button_zobrazNove.Enabled = true;
+                button_Zrcadlit.Enabled = false;
+                button_kopirovat.Enabled = true;
             }
             else
             {
