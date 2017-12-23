@@ -52,7 +52,15 @@ namespace WindowsFormsApp1
                     sw.WriteLine(s);
                 }
                 sw.Flush();
+
+                foreach (string s in FileManager.ZkratNazvy(FileManager.Slozky))
+                {
+                    sw.WriteLine(s);
+                }
+                sw.Flush();
+
             }
+  
             this.Close();
         }
     }

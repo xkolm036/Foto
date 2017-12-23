@@ -259,31 +259,32 @@ namespace WindowsFormsApp1
 
             List<string> pomSlozky = new List<string>();
             List<string> pomSoubory = new List<string>();
+            SlozkyCil = new List<string>();
+            SlozkyZdroj = new List<string>();
+            SouboryCil = new List<string>();
+            SouboryZdroj = new List<string>();
+
 
             //zdroj
             FileManager.DirSearch(zdroj);
-            SlozkyZdroj = new List<string>(FileManager.Slozky);
+            SlozkyZdroj = FileManager.Slozky;
             SlozkyZdroj = FileManager.ZkratNazvy(SlozkyZdroj);
-
-            SouboryZdroj = new List<string>(FileManager.Soubory);
+            SouboryZdroj = FileManager.Soubory;
             SouboryZdroj = FileManager.ZkratNazvy(SouboryZdroj);
             FileManager.clear();
             //-------------------------------------------------
 
             //cil
-
             if (checkBox_list.Checked == false)
             {
-
-
                 FileManager.DirSearch(cil);
-                SlozkyCil = new List<string>(FileManager.Slozky);
+                SlozkyCil = FileManager.Slozky;
                 SlozkyCil = FileManager.ZkratNazvy(SlozkyCil);
-
-                SouboryCil = new List<string>(FileManager.Soubory);
+                SouboryCil = FileManager.Soubory;
                 SouboryCil = FileManager.ZkratNazvy(SouboryCil);
-                //-------------------------------------------------
+                FileManager.clear();
             }
+            //-------------------------------------------------
             //Pridat z nacteneho listu
             foreach (string s in ListFiles)
             {
@@ -296,6 +297,7 @@ namespace WindowsFormsApp1
                 if (!SlozkyCil.Contains(s))
                     SlozkyCil.Add(s);
             }
+            //------------------------------
 
             pomSlozky = SlozkyZdroj.Except(SlozkyCil).ToList();
             pomSoubory = SouboryZdroj.Except(SouboryCil).ToList();
@@ -427,7 +429,7 @@ namespace WindowsFormsApp1
                     button_odebratList.Visible = true;
                     checkBox_list.Visible = true;
                     ListFiles.Clear();
-                   // ListFiles = null;
+                    // ListFiles = null;
                     FileManager.fileToList(listPath);
                     foreach (string s in FileManager.Slozky)
                     {
