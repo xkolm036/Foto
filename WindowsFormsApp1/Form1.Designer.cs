@@ -120,11 +120,11 @@
             // 
             this.label_Cil.AutoSize = true;
             this.label_Cil.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_Cil.Location = new System.Drawing.Point(3, 6);
+            this.label_Cil.Location = new System.Drawing.Point(6, 7);
             this.label_Cil.Name = "label_Cil";
-            this.label_Cil.Size = new System.Drawing.Size(84, 25);
+            this.label_Cil.Size = new System.Drawing.Size(169, 25);
             this.label_Cil.TabIndex = 9;
-            this.label_Cil.Text = "Záloha:";
+            this.label_Cil.Text = "Záloha(odděl ; ):";
             // 
             // label_Kopirovat
             // 
@@ -246,7 +246,7 @@
             this.button_prehod.FlatAppearance.BorderSize = 0;
             this.button_prehod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_prehod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_prehod.Location = new System.Drawing.Point(132, 6);
+            this.button_prehod.Location = new System.Drawing.Point(205, 7);
             this.button_prehod.Name = "button_prehod";
             this.button_prehod.Size = new System.Drawing.Size(163, 30);
             this.button_prehod.TabIndex = 18;
@@ -272,7 +272,7 @@
             // 
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(85, 8);
+            this.button2.Location = new System.Drawing.Point(173, 8);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(26, 23);
             this.button2.TabIndex = 20;
@@ -393,7 +393,7 @@
             this.button_odebratList.FlatAppearance.BorderSize = 0;
             this.button_odebratList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_odebratList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_odebratList.Location = new System.Drawing.Point(301, 7);
+            this.button_odebratList.Location = new System.Drawing.Point(374, 7);
             this.button_odebratList.Name = "button_odebratList";
             this.button_odebratList.Size = new System.Drawing.Size(115, 30);
             this.button_odebratList.TabIndex = 21;
