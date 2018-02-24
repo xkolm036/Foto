@@ -52,6 +52,23 @@ namespace WindowsFormsApp1
             return zkracene;
         }
 
+        public static string ZkratNazvy(string target)
+        {
+            string s;
+            try
+            {
+                return target.Substring(target.LastIndexOf('\\') + 1);
+            }
+            catch
+            {
+                return target;
+            }
+
+         
+
+           
+        }
+
 
         public static void megaRozdel(List<INode> nodes)
         {

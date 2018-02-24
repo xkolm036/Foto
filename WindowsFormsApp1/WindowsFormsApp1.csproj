@@ -86,12 +86,21 @@
     <Compile Include="FormZobrazit.Designer.cs">
       <DependentUpon>FormZobrazit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FullScreenPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FullScreenPicture.Designer.cs">
+      <DependentUpon>FullScreenPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mega.cs" />
     <Compile Include="Mega_status.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mega_status.Designer.cs">
       <DependentUpon>Mega_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyTable.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormZobrazit.resx">
       <DependentUpon>FormZobrazit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FullScreenPicture.resx">
+      <DependentUpon>FullScreenPicture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mega_status.resx">
       <DependentUpon>Mega_status.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class FormZobrazit
+    partial class FullScreenPicture
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // pictureBox1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1433, 684);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(890, 583);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // FormZobrazit
+            // FullScreenPicture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1457, 708);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "FormZobrazit";
-            this.Text = "Rozdíly";
-            this.Resize += new System.EventHandler(this.FormZobrazit_Resize);
+            this.ClientSize = new System.Drawing.Size(894, 589);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "FullScreenPicture";
+            this.Text = "FullScreenPicture";
+            this.ResizeEnd += new System.EventHandler(this.FullScreenPicture_ResizeEnd);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

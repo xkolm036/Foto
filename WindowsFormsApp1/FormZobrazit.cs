@@ -14,8 +14,7 @@ namespace WindowsFormsApp1
     {
         public FormZobrazit(List<string> soubory ,List<string> slozky)
         {
-
-            int sirkacloupce = 1120;
+            
 
             InitializeComponent();
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
@@ -23,40 +22,45 @@ namespace WindowsFormsApp1
             columnHeaderStyle.Font = new Font("Verdana", 15, FontStyle.Bold);
 
 
-            dataGridView1.ColumnCount = 1;
-            dataGridView1.ColumnHeadersVisible = true;
-            dataGridView1.Columns[0].Name = "Složky ["+slozky.Count.ToString()+"]";
-            dataGridView1.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-            dataGridView1.Font = new Font("Verdana", 15, FontStyle.Bold);
-            DataGridViewColumn column = dataGridView1.Columns[0];
-            column.Width = sirkacloupce;
-
-
-
-            dataGridView2.ColumnCount = 1;
-            dataGridView2.ColumnHeadersVisible = true;
-            dataGridView2.Columns[0].Name = "Soubory [" + soubory.Count.ToString() + "]"; ;
-            dataGridView2.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
-            dataGridView2.Font = new Font("Verdana", 15, FontStyle.Bold);
-            DataGridViewColumn column1 = dataGridView2.Columns[0];
-            column1.Width = sirkacloupce;
-
-            foreach (string s in slozky)
-            {
-                int i=0;
-                dataGridView1.Rows.Add(s);
-          
-                i++;
-            }
-
-
-
             foreach (string s in soubory)
             {
-                int i = 0;
-                dataGridView2.Rows.Add(s);
-         
-                i++;
+                    
+                MyTable Table = new MyTable();
+                Table.AutoSize = true;
+                Table.Font = new Font(Table.Font.FontFamily, 16);
+                Table.ColumnCount = 1;
+                Table.RowCount = 1;
+                Table.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+                Table.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddRows;
+                Table.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+                Table.AutoSize = false;
+                Table.Width= 450;
+                Table.Height = 240;
+                Table.cesta = s;
+                Table.Cursor = Cursors.Hand;
+                Table.MouseClick += new MouseEventHandler(Table_click);
+                // Table.BackColor = Color.Black;
+
+
+                Image i = Image.FromFile(s);
+                i = new Bitmap(i, new Size(450, 240));
+
+                Table.BackgroundImage = i;
+
+
+
+                Label l = new Label();
+                l.Text = FileManager.ZkratNazvy(s);
+                l.Anchor = AnchorStyles.Top;
+                l.TextAlign = ContentAlignment.TopLeft;
+                l.BackColor = Color.Transparent;
+                l.ForeColor = SystemColors.Control;
+                l.AutoSize = true;
+
+                Table.Controls.Add(l,0,0);
+
+  
+                flowLayoutPanel1.Controls.Add(Table);
             }
 
 
@@ -64,6 +68,25 @@ namespace WindowsFormsApp1
 
         }
 
-    
+        private void Table_click(object sender, MouseEventArgs e)
+        {
+            MyTable T = new MyTable();
+            T = (MyTable)sender;
+
+
+
+            FullScreenPicture Foto = new FullScreenPicture(T.cesta);
+            Foto.ShowDialog();
+        }
+
+        private void FormZobrazit_Resize(object sender, EventArgs e)
+        {
+           
+                flowLayoutPanel1.Width = this.Width - 39;
+                flowLayoutPanel1.Height = this.Height - 150;
+                flowLayoutPanel1.AutoScroll = true;
+          
+      
+        }
     }
 }

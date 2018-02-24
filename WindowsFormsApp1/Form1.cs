@@ -267,10 +267,18 @@ namespace WindowsFormsApp1
 
             //zdroj
             FileManager.DirSearch(zdroj);
-            SlozkyZdroj = FileManager.Slozky;
-            SlozkyZdroj = FileManager.ZkratNazvy(SlozkyZdroj);
-            SouboryZdroj = FileManager.Soubory;
-            SouboryZdroj = FileManager.ZkratNazvy(SouboryZdroj);
+            foreach(string s in FileManager.Slozky)
+            {
+                SlozkyZdroj.Add(s);
+            }
+
+
+            //   SlozkyZdroj = FileManager.ZkratNazvy(SlozkyZdroj);
+            foreach (string s in FileManager.Soubory)
+            {
+                SouboryZdroj.Add(s);
+            }
+            //  SouboryZdroj = FileManager.ZkratNazvy(SouboryZdroj);
             FileManager.clear();
             //-------------------------------------------------
 
@@ -299,8 +307,22 @@ namespace WindowsFormsApp1
             }
             //------------------------------
 
-            pomSlozky = SlozkyZdroj.Except(SlozkyCil).ToList();
-            pomSoubory = SouboryZdroj.Except(SouboryCil).ToList();
+            foreach(string s in SlozkyZdroj)
+            {
+                if (!SlozkyCil.Contains(FileManager.ZkratNazvy(s)))
+                {
+                    pomSlozky.Add(s);
+                }
+            }
+
+            foreach (string s in SouboryZdroj)
+            {
+                if (!SouboryCil.Contains(FileManager.ZkratNazvy(s)))
+                {
+                    pomSoubory.Add(s);
+                }
+            }
+
 
             Form zobraz = new FormZobrazit(pomSoubory, pomSlozky);
             zobraz.ShowDialog();
