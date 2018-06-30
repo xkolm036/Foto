@@ -50,8 +50,8 @@ namespace WindowsFormsApp1
             cesta = cesta.Replace('/', '\\');
             string newcesta = cesta.Remove(cesta.LastIndexOf("\\"));
             string newcestazkr = newcesta.Substring(newcesta.LastIndexOf("\\") + 1);
-            // newcestazkr = FileManager.FirstCharToUpper(newcestazkr);
-            if (newcesta == newcestazkr)
+             //newcestazkr = FileManager.FirstCharToUpper(newcestazkr);
+            if (newcestazkr == "fotky")
                 newcestazkr = "Fotky";
             if (struktura.Contains(newcestazkr) || newcestazkr == "Fotky" )
             {

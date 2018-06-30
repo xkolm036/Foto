@@ -67,7 +67,7 @@
             this.button_Zrcadlit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Zrcadlit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Zrcadlit.ForeColor = System.Drawing.Color.Black;
-            this.button_Zrcadlit.Location = new System.Drawing.Point(0, 32);
+            this.button_Zrcadlit.Location = new System.Drawing.Point(0, 42);
             this.button_Zrcadlit.Margin = new System.Windows.Forms.Padding(0);
             this.button_Zrcadlit.Name = "button_Zrcadlit";
             this.button_Zrcadlit.Size = new System.Drawing.Size(210, 30);
@@ -144,7 +144,7 @@
             this.button_kopirovat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_kopirovat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_kopirovat.ForeColor = System.Drawing.Color.Black;
-            this.button_kopirovat.Location = new System.Drawing.Point(0, 60);
+            this.button_kopirovat.Location = new System.Drawing.Point(0, 81);
             this.button_kopirovat.Margin = new System.Windows.Forms.Padding(0);
             this.button_kopirovat.Name = "button_kopirovat";
             this.button_kopirovat.Size = new System.Drawing.Size(210, 61);
@@ -158,23 +158,23 @@
             // 
             // button_mega
             // 
-            this.button_mega.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button_mega.BackColor = System.Drawing.SystemColors.Control;
             this.button_mega.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button_mega.FlatAppearance.BorderSize = 0;
             this.button_mega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_mega.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_mega.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_mega.ForeColor = System.Drawing.Color.Black;
-            this.button_mega.Location = new System.Drawing.Point(0, 121);
+            this.button_mega.Location = new System.Drawing.Point(205, -1);
             this.button_mega.Margin = new System.Windows.Forms.Padding(0);
             this.button_mega.Name = "button_mega";
-            this.button_mega.Size = new System.Drawing.Size(210, 41);
+            this.button_mega.Size = new System.Drawing.Size(210, 27);
             this.button_mega.TabIndex = 12;
             this.button_mega.Text = "Zálohovat na mega";
             this.button_mega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_mega.UseVisualStyleBackColor = false;
             this.button_mega.Click += new System.EventHandler(this.button_mega_Click);
             this.button_mega.MouseEnter += new System.EventHandler(this.button_MouseEnter);
-            this.button_mega.MouseLeave += new System.EventHandler(this.button_MouseLeave);
+            this.button_mega.MouseLeave += new System.EventHandler(this.button_MouseLeavew);
             // 
             // button_Duplicity
             // 
@@ -184,7 +184,7 @@
             this.button_Duplicity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Duplicity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_Duplicity.ForeColor = System.Drawing.Color.Black;
-            this.button_Duplicity.Location = new System.Drawing.Point(0, 162);
+            this.button_Duplicity.Location = new System.Drawing.Point(0, 150);
             this.button_Duplicity.Margin = new System.Windows.Forms.Padding(0);
             this.button_Duplicity.Name = "button_Duplicity";
             this.button_Duplicity.Size = new System.Drawing.Size(210, 30);
@@ -246,7 +246,7 @@
             this.button_prehod.FlatAppearance.BorderSize = 0;
             this.button_prehod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_prehod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button_prehod.Location = new System.Drawing.Point(205, 7);
+            this.button_prehod.Location = new System.Drawing.Point(205, 6);
             this.button_prehod.Name = "button_prehod";
             this.button_prehod.Size = new System.Drawing.Size(163, 30);
             this.button_prehod.TabIndex = 18;
@@ -300,7 +300,6 @@
             this.panel1.Controls.Add(this.button_zobrazNove);
             this.panel1.Controls.Add(this.button_Zrcadlit);
             this.panel1.Controls.Add(this.button_kopirovat);
-            this.panel1.Controls.Add(this.button_mega);
             this.panel1.Controls.Add(this.button_Duplicity);
             this.panel1.ForeColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(-2, 1);
@@ -336,7 +335,7 @@
             this.button_nacistlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_nacistlist.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button_nacistlist.ForeColor = System.Drawing.Color.Black;
-            this.button_nacistlist.Location = new System.Drawing.Point(0, 192);
+            this.button_nacistlist.Location = new System.Drawing.Point(0, 187);
             this.button_nacistlist.Margin = new System.Windows.Forms.Padding(0);
             this.button_nacistlist.Name = "button_nacistlist";
             this.button_nacistlist.Size = new System.Drawing.Size(210, 30);
@@ -354,6 +353,7 @@
             this.panel2.Controls.Add(this.label_zdroj);
             this.panel2.Controls.Add(this.textBox_Zdroj);
             this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button_mega);
             this.panel2.Location = new System.Drawing.Point(212, 1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
@@ -379,7 +379,7 @@
             // 
             this.checkBox_list.AutoSize = true;
             this.checkBox_list.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox_list.Location = new System.Drawing.Point(495, 11);
+            this.checkBox_list.Location = new System.Drawing.Point(497, 11);
             this.checkBox_list.Name = "checkBox_list";
             this.checkBox_list.Size = new System.Drawing.Size(102, 24);
             this.checkBox_list.TabIndex = 22;
