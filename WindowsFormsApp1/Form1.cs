@@ -103,48 +103,60 @@ namespace WindowsFormsApp1
 
         private void button_mega_Click(object sender, EventArgs e)
         {
+
             List<string> diffSlozky = new List<string>();
             List<string> diffSoubory = new List<string>();
             List<string> zdrojlist;
             List<string> cillist = new List<string>();
 
-
-            FileManager.DirSearch(zdroj);
-            zdrojlist = new List<string>(FileManager.Slozky);
-
-            foreach (string s in FileManager.Soubory)
+            Task t = Task.Run(() =>
             {
-                zdrojlist.Add(s);
+                FileManager.DirSearch(zdroj);
+                zdrojlist = new List<string>(FileManager.Slozky);
+
+                foreach (string s in FileManager.Soubory)
+                {
+                    zdrojlist.Add(s);
+                }
+
+                FileManager.clear();
+
+
+                Mega.pripoj();
+                if (checkBox_list.Checked == false)
+                    cillist = Mega.VratStruktura();
+
+                //Pridat z nacteneho listu
+                foreach (string s in ListFiles)
+                {
+                    if (!cillist.Contains(s))
+                        cillist.Add(s);
+                }
+
+                foreach (string s in ListDirs)
+                {
+                    if (!cillist.Contains(s))
+                        cillist.Add(s);
+                }
+
+
+                FileManager.difflist(zdrojlist, cillist, ref diffSlozky, ref diffSoubory);
+
+                //Form zobraz = new FormZobrazit(diffSoubory, diffSlozky );
+                //zobraz.ShowDialog();
+
+                // t.Wait();
+
             }
+            );
+            var awaiter = t.GetAwaiter();
+            awaiter.OnCompleted(() =>
+                {
+                    Form mega = new Mega_status(diffSlozky, diffSoubory, cillist);
+                    mega.Show();
+                }
+            );
 
-            FileManager.clear();
-
-
-            Mega.pripoj();
-            if (checkBox_list.Checked == false)
-                cillist = Mega.VratStruktura();
-
-            //Pridat z nacteneho listu
-            foreach (string s in ListFiles)
-            {
-                if (!cillist.Contains(s))
-                    cillist.Add(s);
-            }
-
-            foreach (string s in ListDirs)
-            {
-                if (!cillist.Contains(s))
-                    cillist.Add(s);
-            }
-
-
-            FileManager.difflist(zdrojlist, cillist, ref diffSlozky, ref diffSoubory);
-
-            //Form zobraz = new FormZobrazit(diffSoubory, diffSlozky );
-            //zobraz.ShowDialog();
-
-            Form mega = new Mega_status(diffSlozky, diffSoubory, cillist);
-            mega.Show();
 
 
 

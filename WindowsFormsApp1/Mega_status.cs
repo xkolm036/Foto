@@ -80,37 +80,42 @@ namespace WindowsFormsApp1
 
         }
 
-        private void buttonZalohovat_Click(object sender, EventArgs e)
+        private async void buttonZalohovat_Click(object sender, EventArgs e)
         {
             buttonZalohovat.Enabled = false;
-            int i = 0;
-            foreach (string s in diffSlozky)
-            {
+          
 
-                Mega.VytvorSlozky(s, cillist);
-                dataGridView1.Rows[i].Cells[1].Value = "OK";
-                i++;
-                pocslozek--;
-                dataGridView1.Columns[0].Name = "Složky [" + pocslozek.ToString() + "]";
-            }
-            i = 0;
-            foreach (string s in diffSoubory)
-            {
-                Mega.VytvorSoubory(s, cillist);
-                dataGridView2.Rows[i].Cells[1].Value = "OK";
-                i++;
-                pocsouboru--;
-                dataGridView2.Columns[0].Name = "Soubory [" + pocsouboru.ToString() + "]"; ;
-                if (i == 12)
+                int i = 0;
+                foreach (string s in diffSlozky)
                 {
-                    for (int j = 1; j <= 11; j++)
-                        dataGridView2.Rows.RemoveAt(0);
-                    i = 1;
-                    dataGridView2.Refresh();
-                    this.Refresh();
+
+                    Mega.VytvorSlozky(s, cillist);
+                    dataGridView1.Rows[i].Cells[1].Value = "OK";
+                    i++;
+                    pocslozek--;
+                    dataGridView1.Columns[0].Name = "Složky [" + pocslozek.ToString() + "]";
+                }
+                i = 0;
+                foreach (string s in diffSoubory)
+                {
+
+                   await Mega.VytvorSoubory(s, this, i);
+             
+                   // dataGridView2.Rows[i].Cells[1].Value = "OK";
+                    i++;
+                    pocsouboru--;
+                    dataGridView2.Columns[0].Name = "Soubory [" + pocsouboru.ToString() + "]"; ;
+                    if (i == 12)
+                    {
+                        for (int j = 1; j <= 11; j++)
+                            dataGridView2.Rows.RemoveAt(0);
+                        i = 1;
+                        dataGridView2.Refresh();
+                        this.Refresh();
+                    }
+
                 }
 
-            }
             Mega.odpoj();
         }
 
