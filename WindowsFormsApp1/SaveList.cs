@@ -42,6 +42,10 @@ namespace WindowsFormsApp1
             }
      
             string CombinedPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), ".\\Lists");
+            if (!Directory.Exists(CombinedPath))
+            {
+                Directory.CreateDirectory(CombinedPath);
+            }
             CombinedPath += "\\" + nazev+".txt";
             
 

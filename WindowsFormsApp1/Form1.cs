@@ -103,6 +103,8 @@ namespace WindowsFormsApp1
 
         private void button_mega_Click(object sender, EventArgs e)
         {
+            button_mega.Text = "Loading";
+            button_mega.Enabled = false;
 
             List<string> diffSlozky = new List<string>();
             List<string> diffSoubory = new List<string>();
@@ -141,11 +143,6 @@ namespace WindowsFormsApp1
 
 
                 FileManager.difflist(zdrojlist, cillist, ref diffSlozky, ref diffSoubory);
-
-                //Form zobraz = new FormZobrazit(diffSoubory, diffSlozky );
-                //zobraz.ShowDialog();
-
-                // t.Wait();
 
             }
             );
