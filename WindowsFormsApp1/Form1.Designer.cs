@@ -167,7 +167,7 @@
             this.button_mega.Location = new System.Drawing.Point(205, -1);
             this.button_mega.Margin = new System.Windows.Forms.Padding(0);
             this.button_mega.Name = "button_mega";
-            this.button_mega.Size = new System.Drawing.Size(210, 27);
+            this.button_mega.Size = new System.Drawing.Size(173, 33);
             this.button_mega.TabIndex = 12;
             this.button_mega.Text = "Zálohovat na mega";
             this.button_mega.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

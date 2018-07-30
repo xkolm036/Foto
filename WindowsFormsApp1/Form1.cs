@@ -149,6 +149,8 @@ namespace WindowsFormsApp1
             var awaiter = t.GetAwaiter();
             awaiter.OnCompleted(() =>
                 {
+                    button_mega.Text = "Zálohovat na mega";
+                    button_mega.Enabled = true;
                     Form mega = new Mega_status(diffSlozky, diffSoubory, cillist);
                     mega.Show();
                 }
